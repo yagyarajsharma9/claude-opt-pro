@@ -1,0 +1,52 @@
+{
+  "name": "claude-opt-pro",
+  "version": "0.1.0",
+  "description": "Unified quality + cost optimization plugin for Claude Code. One install replaces 6 separate plugins.",
+  "main": "lib/config-manager.js",
+  "bin": {
+    "claude-opt-pro": "bin/cli.js"
+  },
+  "scripts": {
+    "test": "node tests/test-suite.js",
+    "test:watch": "node tests/test-suite.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yagyarajsharma9/claude-opt-pro.git"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "claude-agent",
+    "optimization",
+    "cost",
+    "quality",
+    "tokens",
+    "plugin",
+    "rtk",
+    "caveman",
+    "codegraph",
+    "memory"
+  ],
+  "author": "Yagyaraj Sharma <yagayrajsharma@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yagyarajsharma9/claude-opt-pro/issues"
+  },
+  "homepage": "https://github.com/yagyarajsharma9/claude-opt-pro#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "claude-code": ">=2.1.0"
+  },
+  "files": [
+    ".claude/plugins/claude-opt-pro/",
+    "bin/"
+  ],
+  "contributors": [
+    {
+      "name": "Yagyaraj Sharma",
+      "email": "yagayrajsharma@gmail.com",
+      "github": "yagyarajsharma9"
+    }
+  ]
+}
