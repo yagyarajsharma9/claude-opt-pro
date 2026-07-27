@@ -38,15 +38,15 @@ claude plugin install claude-opt-pro
                                     │
           ┌─────────────────────────┼─────────────────────────┐
           ▼                         ▼                         ▼
-   ┌──────────────┐       ┌──────────────┐       ┌──────────────┐
-   │  HOOKS LAYER │       │  ENGINE LAYER│       │  SKILLS /    │
-   │              │       │              │       │  COMMANDS    │
-   │              │       │              │       │              │
-   │ SessionStart │       │ ConfigManager│       │ /opt-mode    │
+   ┌──────────────┐       ┌──────────────┐       ┌────────────── ┐
+   │  HOOKS LAYER │       │  ENGINE LAYER│       │  SKILLS /     │
+   │              │       │              │       │  COMMANDS     │
+   │              │       │              │       │               │
+   │ SessionStart │       │ ConfigManager│       │ /opt-mode     │
    │ PreToolUse   │       │ ModeManager  │       │ /opt-dashboard│
-   │ PostToolUse  │       │ QualityEngine│       │ /opt-config  │
-   │ Stop         │       │ CostEngine   │       │ /opt-report  │
-   └──────┬───────┘       └──────┬───────┘       └──────────────┘
+   │ PostToolUse  │       │ QualityEngine│       │ /opt-config   │
+   │ Stop         │       │ CostEngine   │       │ /opt-report   │
+   └──────┬───────┘       └──────┬───────┘       └────────────── ┘
           │                      │
           ▼                      ▼
    ┌──────────────┐       ┌──────────────┐
@@ -66,18 +66,18 @@ claude plugin install claude-opt-pro
    └──────────────┘       └──────────────┘
           │                      │
           ▼                      ▼
-   ┌──────────────┐       ┌──────────────┐
-   │ BUILT-IN     │       │ EXTERNAL     │
-   │ COMMANDS     │       │ TOOLS        │
-   │              │       │              │
-   │ /compact     │       │ RTK          │
-   │ /clear       │       │ Caveman      │
-   │ /compress    │       │ CodeGraph    │
-   │ /init        │       │ Claude Mem   │
-   │ /model       │       │ Superpower   │
+   ┌──────────────┐       ┌────────────── ┐
+   │ BUILT-IN     │       │ EXTERNAL      │
+   │ COMMANDS     │       │ TOOLS         │
+   │              │       │               │
+   │ /compact     │       │ RTK           │
+   │ /clear       │       │ Caveman       │
+   │ /compress    │       │ CodeGraph     │
+   │ /init        │       │ Claude Mem    │
+   │ /model       │       │ Superpower    │
    │ Karpathy     │       │ Cost Optimizer│
-   │ Skills       │       │              │
-   └──────────────┘       └──────────────┘
+   │ Skills       │       │               │
+   └──────────────┘       └────────────── ┘
 ```
 
 ### Data Flow
@@ -90,7 +90,7 @@ Session Start
 │  SessionStart Hook                                              │
 │  • Check/auto-install integrations                              │
 │  • Load mode config (quality/balanced/cost)                     │
-│  • Check if CLAUDE.md exists → suggest /init                   │
+│  • Check if CLAUDE.md exists → suggest /init                    │
 │  • Log session start                                            │
 └──────────────────────────┬──────────────────────────────────────┘
                            │
