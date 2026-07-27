@@ -18,7 +18,11 @@
     "auto_compress_threshold": 80,
     "budget_limit": 50.00,
     "budget_period": "monthly",
-    "suggest_haiku_threshold": 500
+    "suggest_haiku_threshold": 500,
+    "preferred_model": "opus",
+    "preferred_haiku": "haiku",
+    "preferred_sonnet": "sonnet",
+    "preferred_opus": "opus"
   },
   "integrations": {
     "rtk": {
