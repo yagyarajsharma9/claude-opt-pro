@@ -1,5 +1,48 @@
 # Changelog
 
+## v0.2.0 (2026-07-28)
+
+### Major Feature: Auto Model Routing
+
+**What's New:**
+- **Autonomous LLM model routing** based on task complexity (Haiku/Sonnet/Opus)
+- No developer intervention required - plugin automatically selects the best model
+- Complexity assessment based on: file count, lines changed, task type, architecture involvement
+- Tracks routing decisions and savings per session
+
+**How It Works:**
+1. Assesses task complexity (0.0 - 1.0) based on file changes, code patterns, and context
+2. Classifies task type (simple/medium/complex) 
+3. Automatically routes to the right model:
+   - **Simple tasks** → Haiku (80% cost savings)
+   - **Medium tasks** → Sonnet (50% cost savings)
+   - **Complex tasks** → Opus (full quality)
+4. Logs all routing decisions for transparency
+5. Tracks token savings from model routing
+
+**Configuration:**
+```json
+{
+  "cost": {
+    "model_routing": true,
+    "auto_model_routing": true,
+    "auto_model_routing_threshold": 0.5
+  }
+}
+```
+
+**Settings:**
+- `model_routing` - Enable/disable model routing suggestions
+- `auto_model_routing` - Enable/disable autonomous model switching
+- `auto_model_routing_threshold` - Complexity threshold for auto-switching (0.0-1.0)
+
+### Other Improvements
+- Enhanced cost metrics tracking for model routing savings
+- Updated README with comprehensive model routing documentation
+- Added FUTURE_EXTENSIONS.md for planned features
+- Test suite expanded (103 tests, 100% passing)
+- Version bumped to 0.2.0
+
 ## v0.1.0 (2026-07-28)
 
 ### Initial Release - Claude Optimizer Pro
@@ -23,40 +66,5 @@
 - `/opt-dashboard` - View quality and cost metrics
 - `/opt-config` - Configure settings and integrations
 - `/opt-report` - Generate session optimization report
-
-**File Structure:**
-```
-.claude/plugins/claude-opt-pro/
-├── plugin.json
-├── hooks/
-│   ├── hooks.json
-│   ├── session-start.js
-│   ├── pre-tool-use.js
-│   ├── post-tool-use.js
-│   └── stop.js
-├── skills/
-│   └── claude-opt-pro/
-│       ├── SKILL.md
-│       ├── modes.md
-│       ├── dashboard.md
-│       └── config.md
-├── commands/
-│   ├── opt-mode.md
-│   ├── opt-dashboard.md
-│   ├── opt-config.md
-│   └── opt-report.md
-├── lib/
-│   ├── config-manager.js
-│   ├── mode-manager.js
-│   ├── quality-engine.js
-│   ├── cost-engine.js
-│   └── builtin-coordinator.js
-├── config/
-│   ├── default-config.json
-│   ├── modes.json
-│   └── user-config.json
-├── README.md
-└── tests/test-suite.js
-```
 
 **Test Results:** 103/103 tests passing (100%)
