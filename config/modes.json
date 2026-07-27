@@ -1,0 +1,104 @@
+{
+  "modes": {
+    "quality": {
+      "name": "Quality Mode",
+      "description": "Prioritize correctness and code quality over cost savings",
+      "quality": {
+        "karpathy_principles": true,
+        "superpower_tdd": true,
+        "codegraph_semantic": true,
+        "claude_mem": true,
+        "quality_gates": ["pre_commit", "code_review"],
+        "min_test_coverage": 90,
+        "max_complexity": 8
+      },
+      "cost": {
+        "rtk_compression": true,
+        "caveman_mode": "lite",
+        "model_routing": true,
+        "auto_compact_threshold": 70,
+        "auto_clear_on_task_switch": true,
+        "auto_compress_threshold": 85,
+        "budget_limit": 100.00,
+        "suggest_haiku_threshold": 200
+      },
+      "integrations": {
+        "rtk": { "enabled": true, "aggressive": false },
+        "caveman": { "enabled": true, "mode": "lite" },
+        "codegraph": { "enabled": true, "auto_sync": true },
+        "claude_mem": { "enabled": true, "compression": true },
+        "cost_optimizer": { "enabled": false },
+        "superpower": { "enabled": true }
+      }
+    },
+    "balanced": {
+      "name": "Balanced Mode",
+      "description": "Balance quality and cost optimization",
+      "quality": {
+        "karpathy_principles": true,
+        "superpower_tdd": true,
+        "codegraph_semantic": true,
+        "claude_mem": true,
+        "quality_gates": ["pre_commit", "code_review"],
+        "min_test_coverage": 80,
+        "max_complexity": 10
+      },
+      "cost": {
+        "rtk_compression": true,
+        "caveman_mode": "lite",
+        "model_routing": true,
+        "auto_compact_threshold": 60,
+        "auto_clear_on_task_switch": true,
+        "auto_compress_threshold": 80,
+        "budget_limit": 50.00,
+        "suggest_haiku_threshold": 500
+      },
+      "integrations": {
+        "rtk": { "enabled": true, "aggressive": false },
+        "caveman": { "enabled": true, "mode": "lite" },
+        "codegraph": { "enabled": true, "auto_sync": true },
+        "claude_mem": { "enabled": true, "compression": true },
+        "cost_optimizer": { "enabled": true, "mode": "standard" },
+        "superpower": { "enabled": true }
+      }
+    },
+    "cost": {
+      "name": "Cost Mode",
+      "description": "Minimize token usage and cost, some quality tradeoffs",
+      "quality": {
+        "karpathy_principles": true,
+        "superpower_tdd": false,
+        "codegraph_semantic": true,
+        "claude_mem": true,
+        "quality_gates": [],
+        "min_test_coverage": 60,
+        "max_complexity": 15
+      },
+      "cost": {
+        "rtk_compression": true,
+        "caveman_mode": "full",
+        "model_routing": true,
+        "auto_compact_threshold": 50,
+        "auto_clear_on_task_switch": true,
+        "auto_compress_threshold": 70,
+        "budget_limit": 20.00,
+        "suggest_haiku_threshold": 1000
+      },
+      "integrations": {
+        "rtk": { "enabled": true, "aggressive": true },
+        "caveman": { "enabled": true, "mode": "full" },
+        "codegraph": { "enabled": true, "auto_sync": true },
+        "claude_mem": { "enabled": true, "compression": true },
+        "cost_optimizer": { "enabled": true, "mode": "strict" },
+        "superpower": { "enabled": false }
+      }
+    },
+    "custom": {
+      "name": "Custom Mode",
+      "description": "User-defined settings",
+      "quality": {},
+      "cost": {},
+      "integrations": {}
+    }
+  }
+}

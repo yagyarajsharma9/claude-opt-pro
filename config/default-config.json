@@ -1,0 +1,66 @@
+{
+  "mode": "balanced",
+  "quality": {
+    "karpathy_principles": true,
+    "superpower_tdd": true,
+    "codegraph_semantic": true,
+    "claude_mem": true,
+    "quality_gates": ["pre_commit", "code_review"],
+    "min_test_coverage": 80,
+    "max_complexity": 10
+  },
+  "cost": {
+    "rtk_compression": true,
+    "caveman_mode": "lite",
+    "model_routing": true,
+    "auto_compact_threshold": 60,
+    "auto_clear_on_task_switch": true,
+    "auto_compress_threshold": 80,
+    "budget_limit": 50.00,
+    "budget_period": "monthly",
+    "suggest_haiku_threshold": 500
+  },
+  "integrations": {
+    "rtk": {
+      "enabled": true,
+      "aggressive": false,
+      "auto_install": true
+    },
+    "caveman": {
+      "enabled": true,
+      "mode": "lite",
+      "auto_install": true
+    },
+    "codegraph": {
+      "enabled": true,
+      "auto_sync": true,
+      "auto_install": true
+    },
+    "claude_mem": {
+      "enabled": true,
+      "compression": true,
+      "auto_install": true
+    },
+    "cost_optimizer": {
+      "enabled": true,
+      "mode": "standard",
+      "auto_install": true
+    },
+    "superpower": {
+      "enabled": true,
+      "auto_install": true
+    }
+  },
+  "builtin_commands": {
+    "auto_compact": true,
+    "auto_clear": true,
+    "auto_compress": true,
+    "auto_init": true
+  },
+  "metrics": {
+    "track_quality": true,
+    "track_cost": true,
+    "track_tokens": true,
+    "track_session_length": true
+  }
+}

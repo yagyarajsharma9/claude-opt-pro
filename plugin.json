@@ -1,0 +1,31 @@
+{
+  "name": "claude-opt-pro",
+  "version": "0.1.0",
+  "description": "Unified quality + cost optimization plugin for Claude Code. Integrates RTK, Caveman, CodeGraph, Claude Mem, Superpower, and Cost Optimizer with built-in commands.",
+  "author": "Claude Optimizer Pro Team",
+  "license": "MIT",
+  "homepage": "https://github.com/claude-opt-pro/claude-opt-pro",
+  "keywords": ["quality", "cost", "optimization", "tokens", "claude-code"],
+  "hooks": {
+    "SessionStart": "node hooks/session-start.js",
+    "PreToolUse": "node hooks/pre-tool-use.js",
+    "PostToolUse": "node hooks/post-tool-use.js",
+    "Stop": "node hooks/stop.js"
+  },
+  "skills": {
+    "claude-opt-pro": "skills/claude-opt-pro/SKILL.md"
+  },
+  "commands": {
+    "opt-mode": "commands/opt-mode.md",
+    "opt-dashboard": "commands/opt-dashboard.md",
+    "opt-config": "commands/opt-config.md",
+    "opt-report": "commands/opt-report.md"
+  },
+  "engines": {
+    "claudeCode": ">=2.1.0"
+  },
+  "permissions": {
+    "allow": ["Read", "Write", "Bash"],
+    "hooks": true
+  }
+}

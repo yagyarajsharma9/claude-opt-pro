@@ -1,0 +1,24 @@
+{
+  "hooks": [
+    {
+      "type": "SessionStart",
+      "command": "node hooks/session-start.js",
+      "description": "Initialize mode, check budget, auto-setup integrations, load context"
+    },
+    {
+      "type": "PreToolUse",
+      "command": "node hooks/pre-tool-use.js",
+      "description": "RTK compression, model routing, quality pre-checks, auto-trigger built-in commands"
+    },
+    {
+      "type": "PostToolUse",
+      "command": "node hooks/post-tool-use.js",
+      "description": "Log metrics, update quality/cost scores, check context usage"
+    },
+    {
+      "type": "Stop",
+      "command": "node hooks/stop.js",
+      "description": "Generate session report, auto-compact if needed, save metrics"
+    }
+  ]
+}
