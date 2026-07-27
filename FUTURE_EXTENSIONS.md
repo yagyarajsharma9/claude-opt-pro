@@ -6,9 +6,9 @@ This document outlines planned extensions and features for Claude Optimizer Pro.
 
 ## Planned Features
 
-### 1. Multi-Model Orchestration
-**Status:** Partially implemented (v0.2.0)
-**Description:** Auto-route tasks to Haiku, Sonnet, or Opus based on complexity
+### 1. Multi-Model Orchestration (Cross-Agent)
+**Status:** Implementation complete (v0.3.0)
+**Description:** Autonomous LLM routing across all coding agents with agent-specific adapters
 **Enhancements:**
 - Learn from past routing decisions to improve accuracy
 - Support custom model tiers (e.g., Claude 4.0 family)
