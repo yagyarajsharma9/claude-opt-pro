@@ -32,21 +32,21 @@ claude plugin install claude-opt-pro
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                        CLAUDE OPTIMIZER PRO                               │
-│                     Unified Quality + Cost Plugin                         │
+│                        CLAUDE OPTIMIZER PRO                                 │
+│                     Unified Quality + Cost Plugin                           │
 └─────────────────────────────────────────────────────────────────────────────┘
                                     │
           ┌─────────────────────────┼─────────────────────────┐
           ▼                         ▼                         ▼
-   ┌──────────────┐       ┌──────────────┐       ┌────────────── ┐
-   │  HOOKS LAYER │       │  ENGINE LAYER│       │  SKILLS /     │
-   │              │       │              │       │  COMMANDS     │
-   │              │       │              │       │               │
-   │ SessionStart │       │ ConfigManager│       │ /opt-mode     │
-   │ PreToolUse   │       │ ModeManager  │       │ /opt-dashboard│
-   │ PostToolUse  │       │ QualityEngine│       │ /opt-config   │
-   │ Stop         │       │ CostEngine   │       │ /opt-report   │
-   └──────┬───────┘       └──────┬───────┘       └────────────── ┘
+   ┌──────────────┐       ┌──────────────┐       ┌──────────────  ┐
+   │  HOOKS LAYER │       │  ENGINE LAYER│       │  SKILLS /      │
+   │              │       │              │       │  COMMANDS      │
+   │              │       │              │       │                │
+   │ SessionStart │       │ ConfigManager│       │ /opt-mode      │
+   │ PreToolUse   │       │ ModeManager  │       │ /opt-dashboard │
+   │ PostToolUse  │       │ QualityEngine│       │ /opt-config    │
+   │ Stop         │       │ CostEngine   │       │ /opt-report    │
+   └──────┬───────┘       └──────┬───────┘       └──────────────  ┘
           │                      │
           ▼                      ▼
    ┌──────────────┐       ┌──────────────┐
